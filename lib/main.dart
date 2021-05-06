@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -46,12 +48,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Sphere',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Sphere App'),
+        ),
+        body: Center(
+          child: Align(
+            alignment: Alignment(0.01, -0.2),
+            child: Text(
+              'WELCOME',
+              style: TextStyle(
+                  fontSize: 42,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
-  @override
-  Widget build(BuildContext context) {}
+  PageController _controller =
+      PageController(initialPage: 0, viewportFraction: 0.5);
+  @Override
+  widge
 }
