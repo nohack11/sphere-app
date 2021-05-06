@@ -71,9 +71,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
-  PageController _controller =
-      PageController(initialPage: 0, viewportFraction: 0.5);
-  @Override
-  widge
 }
