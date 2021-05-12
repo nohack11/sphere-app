@@ -1,4 +1,4 @@
-package com.example.sphere_app
+package com.billshema.sphere_app
 
 import io.flutter.embedding.android.FlutterActivity
 

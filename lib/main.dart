@@ -36,14 +36,18 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
                 child: Text('Welcome to',
-                    style:
-                        TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                        fontFamily: 'NB_International',
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold)),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(15.0, 200.0, 0.0, 0.0),
                 child: Text('Sphere',
-                    style:
-                        TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                        fontFamily: 'NB_International',
+                        fontSize: 80.0,
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -54,9 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'EMAIL or USERNAME',
+                  labelText: 'Email Address',
                   labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
+                      fontFamily: 'NB_International',
                       fontWeight: FontWeight.bold,
                       color: Colors.grey),
                   focusedBorder: UnderlineInputBorder(
@@ -67,9 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 20.0),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'PASSWORD',
+                  labelText: 'Password',
                   labelStyle: TextStyle(
-                      fontFamily: 'Montserrat',
+                      fontFamily: 'NB_International',
                       fontWeight: FontWeight.bold,
                       color: Colors.grey),
                   focusedBorder: UnderlineInputBorder(
@@ -88,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         color: Colors.blue[900],
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Montserrat',
+                        fontFamily: 'NB_International',
                         decoration: TextDecoration.underline),
                   ),
                 ),
@@ -108,11 +112,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Center(
                       child: Text(
-                        'SIGNIN',
+                        'LOGIN',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Montserrat',
+                          fontFamily: 'NB_International',
                         ),
                       ),
                     ),
@@ -145,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           'Login with Google',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat'),
+                              fontFamily: 'NB_International'),
                         ),
                       ),
                     ],
@@ -161,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'New to Sphere?',
-              style: TextStyle(fontFamily: 'Montserrat'),
+              style: TextStyle(fontFamily: 'NB_International'),
             ),
             SizedBox(width: 5.0),
             InkWell(
@@ -170,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Sign Up',
                 style: TextStyle(
                   color: Colors.blue[900],
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'NB_International',
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
                 ),

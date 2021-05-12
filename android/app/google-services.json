@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "514299260077",
+    "project_id": "sphere-app-77708",
+    "storage_bucket": "sphere-app-77708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514299260077:android:01f7ec0dd33e41f6922a24",
+        "android_client_info": {
+          "package_name": "com.billshema.sphere_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514299260077-e8u7ht3aoh3q6ekk0mrovj7tk9kdnjgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD86pDW8EQrEInJNPS9g1zXf9y79LrGoLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514299260077-e8u7ht3aoh3q6ekk0mrovj7tk9kdnjgr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "514299260077-c6onele66tmj6gr8kbcs067gua19dh6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.billshema.sphereApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
