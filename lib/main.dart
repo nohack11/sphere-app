@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'welcome.dart';
+import 'src/welcome.dart';
+import 'src/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: new MyHomePage(),
-      title: 'Flutter Demo',
     );
   }
 }
@@ -169,7 +168,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(width: 5.0),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => SignUp()));
+              },
               child: Text(
                 'Sign Up',
                 style: TextStyle(
