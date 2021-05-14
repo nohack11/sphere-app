@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sphere_app/src/AppTheme.dart';
+
 import 'package:sphere_app/src/register.dart';
 
 // void main() {
@@ -11,8 +11,22 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: WelcomePage(),
-      theme: AppTheme().lightTheme,
+
+      //theme: AppTheme().lightTheme,
+    );
+  }
+}
+
+class BackImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage('assets/img/backgrounds/2.png'),
+      )),
     );
   }
 }
@@ -20,6 +34,7 @@ class Welcome extends StatelessWidget {
 class WelcomePage extends StatefulWidget {
   @override
   _WelcomePageState createState() => _WelcomePageState();
+  final backGround = new BackImage();
 }
 
 class _WelcomePageState extends State<WelcomePage> {
