@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:sphere_app/src/register.dart';
 
 // void main() {
@@ -12,9 +11,15 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
-
-      //theme: AppTheme().lightTheme,
+      home: Stack(
+        children: [
+          BackImage(),
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            body: WelcomePage(),
+          )
+        ],
+      ),
     );
   }
 }
@@ -24,9 +29,12 @@ class BackImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage('assets/img/backgrounds/2.png'),
-      )),
+        image: DecorationImage(
+          image: AssetImage('assets/img/backgrounds/2.png'),
+        ),
+        color: Colors.transparent,
+      ),
+      //color: Colors.transparent,
     );
   }
 }
@@ -34,7 +42,6 @@ class BackImage extends StatelessWidget {
 class WelcomePage extends StatefulWidget {
   @override
   _WelcomePageState createState() => _WelcomePageState();
-  final backGround = new BackImage();
 }
 
 class _WelcomePageState extends State<WelcomePage> {
@@ -43,6 +50,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return MaterialApp(
       title: 'Sphere',
       home: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -81,15 +89,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       textAlign: TextAlign.center,
                       textAlignVertical: TextAlignVertical.bottom,
                       decoration: InputDecoration(
-                        //fillColor: Colors.white54,
-                        //filled: true,
                         hintText: 'Add your name',
-
-                        //labelText: 'Enter your Name',
                         labelStyle: TextStyle(
                           fontFamily: 'NB_International',
                           fontWeight: FontWeight.bold,
-                          //color: Colors.grey
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
