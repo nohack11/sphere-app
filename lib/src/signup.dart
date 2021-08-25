@@ -4,8 +4,9 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue.shade200,
+      home: Scaffold(
+        //backgroundColor: Colors.amber,
+        body: SignUpPage(),
       ),
     );
   }
@@ -19,10 +20,17 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: Column(children: <Widget>[
-        Container(),
-      ]),
+    return MaterialApp(
+      home: Column(
+        children: <Widget>[
+          Container(
+            color: Colors.greenAccent,
+          ),
+          // Container(
+          //   color: Colors.blue,
+          // ),
+        ],
+      ),
     );
   }
 }
