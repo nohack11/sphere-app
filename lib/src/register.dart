@@ -24,25 +24,22 @@ class _RegisterState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amberAccent,
-      body: Row(
+      body: Flex(
+        direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
             color: Colors.cyan,
-            alignment: Alignment.center,
-            child: Positioned(
-              // top: 05,
-              // bottom: 15,
-              // right: 5,
-              child: IconButton(
-                icon: Image.asset('assets/icons/right_arrow_long.png'),
-                iconSize: 40,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WelcomePage()),
-                  );
-                },
-              ),
+            alignment: Alignment(-1.0, 0.0),
+            child: IconButton(
+              icon: Image.asset('assets/icons/right_arrow_long.png'),
+              iconSize: 40,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WelcomePage()),
+                );
+              },
             ),
           ),
         ],
