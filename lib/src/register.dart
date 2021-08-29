@@ -24,25 +24,59 @@ class _RegisterState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amberAccent,
-      body: Flex(
-        direction: Axis.horizontal,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            color: Colors.cyan,
-            alignment: Alignment(-1.0, 0.0),
-            child: IconButton(
-              icon: Image.asset('assets/icons/right_arrow_long.png'),
-              iconSize: 40,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WelcomePage()),
-                );
-              },
+      body: Container(
+        padding: EdgeInsets.zero,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Align(
+              alignment: Alignment.bottomRight,
+              child: RightArr(),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: LeftArr(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class RightArr extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.cyan,
+      child: IconButton(
+        icon: Image.asset('assets/icons/right_arrow_long.png'),
+        iconSize: 40,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomePage()),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class LeftArr extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.cyan,
+      child: IconButton(
+        icon: Image.asset('assets/icons/left_arrow.png'),
+        iconSize: 40,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomePage()),
+          );
+        },
       ),
     );
   }

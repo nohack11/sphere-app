@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sphere_app/src/register.dart';
 
-// void main() {
-//   runApp(MyApp());
-// }
-
 class Welcome extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -49,11 +45,8 @@ class _WelcomePageState extends State<WelcomePage> {
           BackImage(),
           Scaffold(
             backgroundColor: Colors.blue,
-            body: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                //crossAxisAlignment: CrossAxisAlignment.start,
+            body: Container(
+              child: Stack(
                 children: <Widget>[
                   Container(
                     color: Colors.amber,
@@ -112,24 +105,16 @@ class _WelcomePageState extends State<WelcomePage> {
 
                   SizedBox(width: 20.0),
                   Container(
-                    child: Positioned(
-                      top: 75,
-                      bottom: 15,
-                      right: 5,
-                      //child: Container(
-                      //color: Colors.red[300],
-                      //padding: EdgeInsets.fromLTRB(10.0, 1.0, 0.0, 0.0),
-                      child: IconButton(
-                        icon: Image.asset('assets/icons/right_arrow_long.png'),
-                        iconSize: 40,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterPage()),
-                          );
-                        },
-                      ),
+                    child: IconButton(
+                      icon: Image.asset('assets/icons/right_arrow_long.png'),
+                      iconSize: 40,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage()),
+                        );
+                      },
                     ),
                   ),
                 ],
@@ -137,6 +122,44 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class RightArr extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.cyan,
+      child: IconButton(
+        icon: Image.asset('assets/icons/right_arrow_long.png'),
+        iconSize: 40,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomePage()),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class LeftArr extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.cyan,
+      child: IconButton(
+        icon: Image.asset('assets/icons/left_arrow.png'),
+        iconSize: 40,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomePage()),
+          );
+        },
       ),
     );
   }
