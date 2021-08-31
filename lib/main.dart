@@ -25,7 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        //resizeToAvoidBottomPadding: false,
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -96,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 40.0),
+              SizedBox(height: 20.0),
               Container(
                 height: 40.0,
                 child: Material(
@@ -158,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        SizedBox(height: 45.0),
+        SizedBox(height: 25.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

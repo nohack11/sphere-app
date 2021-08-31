@@ -29,6 +29,7 @@ class _RegisterState extends State<RegisterPage> {
         child: Stack(
           fit: StackFit.expand,
           children: [
+            BackImage(),
             Align(
               alignment: Alignment.bottomRight,
               child: RightArr(),
@@ -78,6 +79,21 @@ class LeftArr extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+}
+
+class BackImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/img/backgrounds/3.png'),
+        ),
+        color: Colors.transparent,
+      ),
+      //color: Colors.transparent,
     );
   }
 }
