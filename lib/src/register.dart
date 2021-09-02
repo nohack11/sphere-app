@@ -23,19 +23,24 @@ class _RegisterState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amberAccent,
       body: Container(
         padding: EdgeInsets.zero,
         child: Stack(
           fit: StackFit.expand,
           children: [
-            BackImage(),
+            Expanded(
+              child: BackImage(),
+            ),
             Align(
-              alignment: Alignment.bottomRight,
+              alignment: Alignment.center,
+              child: FillBlank(),
+            ),
+            Align(
+              alignment: Alignment(0.80, 0.87),
               child: RightArr(),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment(-0.80, 0.87),
               child: LeftArr(),
             ),
           ],
@@ -49,7 +54,6 @@ class RightArr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan,
       child: IconButton(
         icon: Image.asset('assets/icons/right_arrow_long.png'),
         iconSize: 40,
@@ -68,9 +72,8 @@ class LeftArr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan,
       child: IconButton(
-        icon: Image.asset('assets/icons/left_arrow.png'),
+        icon: Image.asset('assets/icons/left_arrow_long.png'),
         iconSize: 40,
         onPressed: () {
           Navigator.push(
@@ -94,6 +97,30 @@ class BackImage extends StatelessWidget {
         color: Colors.transparent,
       ),
       //color: Colors.transparent,
+    );
+  }
+}
+
+class FillBlank extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.pink,
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          )),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: 'My name',
+            border: InputBorder.none,
+          ),
+        ),
+      ),
     );
   }
 }

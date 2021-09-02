@@ -58,7 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.bottomRight,
+                    alignment: Alignment(0.80, 0.87),
                     child: RightArr(),
                   ),
                 ],
