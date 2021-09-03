@@ -28,8 +28,11 @@ class _RegisterState extends State<RegisterPage> {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Expanded(
-              child: BackImage(),
+            BackImage(),
+            IntroWord(),
+            Align(
+              child: FillBlankQ(),
+              alignment: Alignment(-0.10, -0.15),
             ),
             Align(
               alignment: Alignment.center,
@@ -105,20 +108,77 @@ class FillBlank extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
+      width: 320,
       decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.pink,
+        //border: Border.all(),
+        borderRadius: BorderRadius.all(
+          Radius.circular(20),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade400,
+            blurRadius: 15.0,
+            offset: Offset(0.0, 4.0),
+            spreadRadius: 1.0,
           ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(20),
-          )),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: 'My name',
-            border: InputBorder.none,
+          BoxShadow(
+            color: Colors.grey[400],
+            blurRadius: 15.0,
+            offset: Offset(0.0, -4.0),
+            spreadRadius: 1.0,
           ),
+        ],
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Colors.grey[300],
+            Colors.grey[300],
+            Colors.grey[300],
+            Colors.grey[300],
+          ],
+          stops: [0.1, 0.3, 0.8, 0.9],
+        ),
+      ),
+      child: TextField(
+        textAlign: TextAlign.center,
+        decoration: InputDecoration(
+          hintText: 'My name',
+          border: InputBorder.none,
+        ),
+      ),
+    );
+  }
+}
+
+class FillBlankQ extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(
+        "what's your age",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 25,
+          fontFamily: 'NB_International',
+        ),
+      ),
+    );
+  }
+}
+
+class IntroWord extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(75.0, 170.0, 0.0, 0.0),
+      child: Text(
+        'answer the following',
+        style: TextStyle(
+          fontSize: 30.0,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'NB_International',
         ),
       ),
     );
