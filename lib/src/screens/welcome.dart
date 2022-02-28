@@ -1,50 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:sphere_app/src/welcome.dart';
+import 'package:sphere_app/src/screens/register.dart';
 
-class Register extends StatelessWidget {
+class Welcome extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
-        body: new RegisterPage(),
+        backgroundColor: Colors.transparent,
+        body: WelcomePage(),
       ),
     );
   }
 }
 
-class RegisterPage extends StatefulWidget {
+class BackImage extends StatelessWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/img/backgrounds/2.png'),
+        ),
+        color: Colors.transparent,
+      ),
+      //color: Colors.transparent,
+    );
+  }
 }
 
-class _RegisterState extends State<RegisterPage> {
+class WelcomePage extends StatefulWidget {
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.zero,
         child: Stack(
-          fit: StackFit.expand,
           children: [
             BackImage(),
-            IntroWord(),
-            Align(
-              child: FillBlankQ(),
-              alignment: Alignment(-0.10, -0.15),
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: FillBlank(),
-            ),
-            Align(
-              alignment: Alignment(0.80, 0.87),
-              child: RightArr(),
-            ),
-            Align(
-              alignment: Alignment(-0.80, 0.87),
-              child: LeftArr(),
+            Container(
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(135.0, 280.0, 0.0, 0.0),
+                    child: Text(
+                      'Welcome',
+                      style: TextStyle(
+                        fontSize: 35.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NB_International',
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(0.80, 0.87),
+                    child: RightArr(),
+                  ),
+                  Align(
+                    child: FillBlankQ(),
+                    alignment: Alignment(-0.10, -0.15),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: FillBlank(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -63,43 +89,10 @@ class RightArr extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => WelcomePage()),
+            MaterialPageRoute(builder: (context) => RegisterPage()),
           );
         },
       ),
-    );
-  }
-}
-
-class LeftArr extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: IconButton(
-        icon: Image.asset('assets/icons/left_arrow_long.png'),
-        iconSize: 40,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => WelcomePage()),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class BackImage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/img/backgrounds/3.png'),
-        ),
-        color: Colors.transparent,
-      ),
-      //color: Colors.transparent,
     );
   }
 }
@@ -157,27 +150,10 @@ class FillBlankQ extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        "what's your age",
+        "My name is",
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 25,
-          fontFamily: 'NB_International',
-        ),
-      ),
-    );
-  }
-}
-
-class IntroWord extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(75.0, 170.0, 0.0, 0.0),
-      child: Text(
-        'answer the following',
-        style: TextStyle(
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold,
           fontFamily: 'NB_International',
         ),
       ),

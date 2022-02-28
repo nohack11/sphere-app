@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'src/welcome.dart';
-import 'src/signup.dart';
+import 'src/screens/welcome.dart';
+import 'src/screens/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,24 +29,16 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Flexible(
-            flex: 2,
+            flex: 1,
             child: Container(
               child: Stack(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                    child: Text('Welcome to',
-                        style: TextStyle(
-                            fontFamily: 'NB_International',
-                            fontSize: 50.0,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 200.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(140.0, 110.0, 0.0, 0.0),
                     child: Text('Sphere',
                         style: TextStyle(
                             fontFamily: 'NB_International',
-                            fontSize: 80.0,
+                            fontSize: 30.0,
                             fontWeight: FontWeight.bold)),
                   ),
                 ],
@@ -54,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Flexible(
-            flex: 3,
+            flex: 2,
             child: Container(
               padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
               child: Column(
@@ -100,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 40.0),
                   Container(
                     height: 40.0,
                     child: Material(
@@ -130,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   SizedBox(height: 20.0),
                   Container(
-                    height: 40.0,
+                    height: 34.0,
                     color: Colors.transparent,
                     child: Container(
                       decoration: BoxDecoration(
@@ -168,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(height: 25.0),
           Flexible(
-            flex: 1,
+            flex: 0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
